@@ -1,0 +1,300 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3FFBFC3D16A4F48C00FB9071 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FFBFC3C16A4F48C00FB9071 /* UIKit.framework */; };
+		3FFBFC3F16A4F48C00FB9071 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FFBFC3E16A4F48C00FB9071 /* Foundation.framework */; };
+		3FFBFC4116A4F48C00FB9071 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FFBFC4016A4F48C00FB9071 /* CoreGraphics.framework */; };
+		3FFBFC4716A4F48C00FB9071 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3FFBFC4516A4F48C00FB9071 /* InfoPlist.strings */; };
+		3FFBFC4916A4F48C00FB9071 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FFBFC4816A4F48C00FB9071 /* main.m */; };
+		3FFBFC4D16A4F48C00FB9071 /* jokeAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FFBFC4C16A4F48C00FB9071 /* jokeAppDelegate.m */; };
+		3FFBFC4F16A4F48C00FB9071 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FFBFC4E16A4F48C00FB9071 /* Default.png */; };
+		3FFBFC5116A4F48C00FB9071 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FFBFC5016A4F48C00FB9071 /* Default@2x.png */; };
+		3FFBFC5316A4F48C00FB9071 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FFBFC5216A4F48C00FB9071 /* Default-568h@2x.png */; };
+		3FFBFC5616A4F48C00FB9071 /* jokeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FFBFC5516A4F48C00FB9071 /* jokeViewController.m */; };
+		3FFBFC5916A4F48C00FB9071 /* jokeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FFBFC5716A4F48C00FB9071 /* jokeViewController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		3FFBFC3816A4F48C00FB9071 /* ObjectiveJoke.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ObjectiveJoke.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3FFBFC3C16A4F48C00FB9071 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		3FFBFC3E16A4F48C00FB9071 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		3FFBFC4016A4F48C00FB9071 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		3FFBFC4416A4F48C00FB9071 /* ObjectiveJoke-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ObjectiveJoke-Info.plist"; sourceTree = "<group>"; };
+		3FFBFC4616A4F48C00FB9071 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		3FFBFC4816A4F48C00FB9071 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		3FFBFC4A16A4F48C00FB9071 /* ObjectiveJoke-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ObjectiveJoke-Prefix.pch"; sourceTree = "<group>"; };
+		3FFBFC4B16A4F48C00FB9071 /* jokeAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = jokeAppDelegate.h; sourceTree = "<group>"; };
+		3FFBFC4C16A4F48C00FB9071 /* jokeAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = jokeAppDelegate.m; sourceTree = "<group>"; };
+		3FFBFC4E16A4F48C00FB9071 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		3FFBFC5016A4F48C00FB9071 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		3FFBFC5216A4F48C00FB9071 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		3FFBFC5416A4F48C00FB9071 /* jokeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = jokeViewController.h; sourceTree = "<group>"; };
+		3FFBFC5516A4F48C00FB9071 /* jokeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = jokeViewController.m; sourceTree = "<group>"; };
+		3FFBFC5816A4F48C00FB9071 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/jokeViewController.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3FFBFC3516A4F48C00FB9071 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3FFBFC3D16A4F48C00FB9071 /* UIKit.framework in Frameworks */,
+				3FFBFC3F16A4F48C00FB9071 /* Foundation.framework in Frameworks */,
+				3FFBFC4116A4F48C00FB9071 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3FFBFC2D16A4F48C00FB9071 = {
+			isa = PBXGroup;
+			children = (
+				3FFBFC4216A4F48C00FB9071 /* ObjectiveJoke */,
+				3FFBFC3B16A4F48C00FB9071 /* Frameworks */,
+				3FFBFC3916A4F48C00FB9071 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3FFBFC3916A4F48C00FB9071 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3FFBFC3816A4F48C00FB9071 /* ObjectiveJoke.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3FFBFC3B16A4F48C00FB9071 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3FFBFC3C16A4F48C00FB9071 /* UIKit.framework */,
+				3FFBFC3E16A4F48C00FB9071 /* Foundation.framework */,
+				3FFBFC4016A4F48C00FB9071 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3FFBFC4216A4F48C00FB9071 /* ObjectiveJoke */ = {
+			isa = PBXGroup;
+			children = (
+				3FFBFC4B16A4F48C00FB9071 /* jokeAppDelegate.h */,
+				3FFBFC4C16A4F48C00FB9071 /* jokeAppDelegate.m */,
+				3FFBFC5416A4F48C00FB9071 /* jokeViewController.h */,
+				3FFBFC5516A4F48C00FB9071 /* jokeViewController.m */,
+				3FFBFC5716A4F48C00FB9071 /* jokeViewController.xib */,
+				3FFBFC4316A4F48C00FB9071 /* Supporting Files */,
+			);
+			path = ObjectiveJoke;
+			sourceTree = "<group>";
+		};
+		3FFBFC4316A4F48C00FB9071 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3FFBFC4416A4F48C00FB9071 /* ObjectiveJoke-Info.plist */,
+				3FFBFC4516A4F48C00FB9071 /* InfoPlist.strings */,
+				3FFBFC4816A4F48C00FB9071 /* main.m */,
+				3FFBFC4A16A4F48C00FB9071 /* ObjectiveJoke-Prefix.pch */,
+				3FFBFC4E16A4F48C00FB9071 /* Default.png */,
+				3FFBFC5016A4F48C00FB9071 /* Default@2x.png */,
+				3FFBFC5216A4F48C00FB9071 /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3FFBFC3716A4F48C00FB9071 /* ObjectiveJoke */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3FFBFC5C16A4F48C00FB9071 /* Build configuration list for PBXNativeTarget "ObjectiveJoke" */;
+			buildPhases = (
+				3FFBFC3416A4F48C00FB9071 /* Sources */,
+				3FFBFC3516A4F48C00FB9071 /* Frameworks */,
+				3FFBFC3616A4F48C00FB9071 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ObjectiveJoke;
+			productName = ObjectiveJoke;
+			productReference = 3FFBFC3816A4F48C00FB9071 /* ObjectiveJoke.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3FFBFC2F16A4F48C00FB9071 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = joke;
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = wolfeverson;
+			};
+			buildConfigurationList = 3FFBFC3216A4F48C00FB9071 /* Build configuration list for PBXProject "ObjectiveJoke" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 3FFBFC2D16A4F48C00FB9071;
+			productRefGroup = 3FFBFC3916A4F48C00FB9071 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3FFBFC3716A4F48C00FB9071 /* ObjectiveJoke */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3FFBFC3616A4F48C00FB9071 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3FFBFC4716A4F48C00FB9071 /* InfoPlist.strings in Resources */,
+				3FFBFC4F16A4F48C00FB9071 /* Default.png in Resources */,
+				3FFBFC5116A4F48C00FB9071 /* Default@2x.png in Resources */,
+				3FFBFC5316A4F48C00FB9071 /* Default-568h@2x.png in Resources */,
+				3FFBFC5916A4F48C00FB9071 /* jokeViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3FFBFC3416A4F48C00FB9071 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3FFBFC4916A4F48C00FB9071 /* main.m in Sources */,
+				3FFBFC4D16A4F48C00FB9071 /* jokeAppDelegate.m in Sources */,
+				3FFBFC5616A4F48C00FB9071 /* jokeViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		3FFBFC4516A4F48C00FB9071 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3FFBFC4616A4F48C00FB9071 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		3FFBFC5716A4F48C00FB9071 /* jokeViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3FFBFC5816A4F48C00FB9071 /* en */,
+			);
+			name = jokeViewController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3FFBFC5A16A4F48C00FB9071 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		3FFBFC5B16A4F48C00FB9071 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3FFBFC5D16A4F48C00FB9071 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ObjectiveJoke/ObjectiveJoke-Prefix.pch";
+				INFOPLIST_FILE = "ObjectiveJoke/ObjectiveJoke-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		3FFBFC5E16A4F48C00FB9071 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ObjectiveJoke/ObjectiveJoke-Prefix.pch";
+				INFOPLIST_FILE = "ObjectiveJoke/ObjectiveJoke-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3FFBFC3216A4F48C00FB9071 /* Build configuration list for PBXProject "ObjectiveJoke" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3FFBFC5A16A4F48C00FB9071 /* Debug */,
+				3FFBFC5B16A4F48C00FB9071 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3FFBFC5C16A4F48C00FB9071 /* Build configuration list for PBXNativeTarget "ObjectiveJoke" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3FFBFC5D16A4F48C00FB9071 /* Debug */,
+				3FFBFC5E16A4F48C00FB9071 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3FFBFC2F16A4F48C00FB9071 /* Project object */;
+}
