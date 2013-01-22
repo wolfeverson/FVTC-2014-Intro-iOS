@@ -19,7 +19,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    [submitButton enabled:NO];
+    [submitButton setEnabled:NO];
 }
 
 - (void)didReceiveMemoryWarning
@@ -73,6 +73,6 @@
 
 - (IBAction)nameFieldExit:(id)sender
 {
-    [submitButton enabled:YES];
+    [submitButton setEnabled:YES];
 }
 @end
