@@ -49,7 +49,8 @@
 
 - (IBAction)submitButtonClicked:(id)sender {
     NSLog(@"Submit Button be clicked");
-    UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"Submission"
+    UIAlertView *message = [[UIAlertView alloc]
+                                        initWithTitle:@"Submission"
                                         message:@"Yay!"
                                         delegate:nil
                                         cancelButtonTitle:@"OK"
