@@ -13,7 +13,7 @@
 @end
 
 @implementation Practical1ViewController
-
+@synthesize ArtistText, NameText, VolumeSlider;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -26,4 +26,19 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [ArtistText resignFirstResponder];
+    [NameText resignFirstResponder];
+    
+}
+
+- (IBAction)SubmitButtonClicked:(id)sender
+{
+    NSString *Artist = [ArtistText text];
+    NSString *SongName = [NameText text];
+    int SliderValue = [VolumeSlider value];
+    NSString *CombinedString = [NSString stringWithFormat:@"Your song choice is %@, by %@, set to volume level %i", SongName, Artist, SliderValue];
+    NSLog(CombinedString);
+}
 @end
