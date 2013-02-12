@@ -8,6 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-@interface Feb11TestViewController : UIViewController
+@interface Feb11TestViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate>
+
+{
+    int counter;
+    NSArray *arrNumbers;
+}
+- (IBAction)AddButtonClick:(id)sender;
+
+@property (weak, nonatomic) IBOutlet UIPickerView *pickerView;
 
 @end
