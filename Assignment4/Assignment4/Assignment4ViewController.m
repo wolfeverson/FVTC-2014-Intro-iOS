@@ -62,7 +62,32 @@
 
 - (IBAction)tryButtonClicked:(id)sender
 {
-    int firstNum = [pickerView:
+//get numbers and test against secret.
+    int first = [pickerView selectedRowInComponent:0];
+    int second = [pickerView selectedRowInComponent:1];
+    int third = [pickerView selectedRowInComponent:2];
+    int combined = (first*100)+(second*10)+third;
+    if (combined != 451)
+    {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Key is Incorrect"
+                                                        message:@"Try Again?"
+                                                       delegate:self
+                                              cancelButtonTitle:@"K"
+                                              otherButtonTitles:nil];
+        [alert show];
+        //[alert release];
+    }
+    else
+    {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Key is correct"
+                                                        message:@"Word"
+                                                       delegate:self
+                                              cancelButtonTitle:@"K"
+                                              otherButtonTitles:nil];
+        [alert show];
+        //[alert release];
+    }
+
     
 }
 
@@ -72,6 +97,13 @@
     [pickerView selectRow:4 inComponent:0 animated:YES];
     [pickerView selectRow:5 inComponent:1 animated:YES];
     [pickerView selectRow:1 inComponent:2 animated:YES];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Cheater."
+                                                    message:@"Key has been selected."
+                                                   delegate:self
+                                          cancelButtonTitle:@"K"
+                                          otherButtonTitles:nil];
+    [alert show];
+    //[alert release];
     
     
 }
