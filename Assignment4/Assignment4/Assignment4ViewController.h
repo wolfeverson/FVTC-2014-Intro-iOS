@@ -9,5 +9,12 @@
 #import <UIKit/UIKit.h>
 
 @interface Assignment4ViewController : UIViewController
+{
+    NSArray *arrNumbers;
+}
+@property (weak, nonatomic) IBOutlet UIPickerView *pickerView;
+- (IBAction)tryButtonClicked:(id)sender;
+- (IBAction)autoButtonClicked:(id)sender;
+
 
 @end
