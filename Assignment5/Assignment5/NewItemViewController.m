@@ -16,7 +16,7 @@
 
 @implementation NewItemViewController
 @synthesize ItemField, OwnerField, QualityField;
--(void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
+-(void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event//leaves keyboard event
 {
     [ItemField resignFirstResponder];
     [OwnerField resignFirstResponder];
@@ -46,7 +46,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)SaveButtonClick:(id)sender
+- (IBAction)SaveButtonClick:(id)sender//adds new item to array
 {
     SharpItem *temp = [[SharpItem alloc] init];
     [temp setItem:[ItemField text]];
@@ -68,7 +68,7 @@
 {
     _SharpItems = items;
 }
-- (NSMutableArray *) AlbumItems //this piece of code is uneeded.   It is there for completionist sake.  
+- (NSMutableArray *) AlbumItems //this piece of code is uneeded.   It is there for completionist sake.  >.>
 {
     return  _SharpItems;
 }

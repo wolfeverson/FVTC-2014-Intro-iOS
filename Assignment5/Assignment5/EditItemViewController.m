@@ -16,7 +16,7 @@
 
 @implementation EditItemViewController
 @synthesize ItemField, OwnerField, QualityField;
--(void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
+-(void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event//Leaves Keyboard event
 {
     [ItemField resignFirstResponder];
     [OwnerField resignFirstResponder];
@@ -35,6 +35,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    //Sets Fields to edit. 
     [ItemField setText:[CurrentSharp Item]];
     [OwnerField setText:[CurrentSharp Owner]];
     [QualityField setText:[CurrentSharp Quality]];
@@ -53,6 +54,7 @@
 
 - (IBAction)SaveButtonClick:(id)sender 
 {
+    //Saves fields as slot reserved from the array.
     SharpItem *temp = [[SharpItem alloc] init];
     [temp setItem:[ItemField text]];
     [temp setOwner:[OwnerField text]];

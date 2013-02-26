@@ -46,7 +46,7 @@
 }
 
 
-- (void)viewDidLoad
+- (void)viewDidLoad //fills array with basic single digits.
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
@@ -93,7 +93,7 @@
 
 - (IBAction)autoButtonClicked:(id)sender
 {
-    //secret password is....  451.
+    //secret password is....  451.  Cheater.
     [pickerView selectRow:4 inComponent:0 animated:YES];
     [pickerView selectRow:5 inComponent:1 animated:YES];
     [pickerView selectRow:1 inComponent:2 animated:YES];

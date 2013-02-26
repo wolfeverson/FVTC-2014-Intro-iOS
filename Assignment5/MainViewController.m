@@ -22,19 +22,18 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+        // Custom initialization  
                _SharpItems= [[NSMutableArray alloc] init];
-        SharpItem *fakes = [[SharpItem alloc]init];
-        [fakes setItem:@"Kitten"];
-        [fakes setOwner:@"OwnerTest"];
-        [fakes setQuality:@"QualTest"];
-        [_SharpItems addObject:fakes];
-        
-        
+        //***Debug Data***
+        //SharpItem *fakes = [[SharpItem alloc]init];
+        //[fakes setItem:@"Kitten"];
+        //[fakes setOwner:@"OwnerTest"];
+        //[fakes setQuality:@"QualTest"];
+        //[_SharpItems addObject:fakes];
     }
     return self;
 }
--(void)viewDidAppear:(BOOL)animated
+-(void)viewDidAppear:(BOOL)animated//reloads data after resuming this form.
 {
     [PickerView reloadAllComponents];
 }
@@ -51,7 +50,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)AddButtonClick:(id)sender
+- (IBAction)AddButtonClick:(id)sender//loads new form for adding item
 {
     
     NewItemViewController *nivc = [[NewItemViewController alloc] init];
@@ -65,7 +64,7 @@
     
 }
 
-- (IBAction)EditButtonClick:(id)sender
+- (IBAction)EditButtonClick:(id)sender //loads new form for changing ite,
 {
     EditItemViewController *eivc = [[EditItemViewController alloc] init];
 
@@ -75,7 +74,7 @@
     [self presentViewController:NavController animated:YES completion:Nil];
 }
 
-- (IBAction)DeleteButtonClick:(id)sender
+- (IBAction)DeleteButtonClick:(id)sender //deletes item from index and reloads.
 {
     if ([_SharpItems count] > 0)
     {
