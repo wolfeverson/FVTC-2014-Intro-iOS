@@ -13,6 +13,7 @@
 {
     NSMutableArray *_SharpItems;
     SharpItem *CurrentSharp;
+    int    CurrentIndex;
 }
 @property (weak, nonatomic) IBOutlet UITextField *ItemField;
 @property (weak, nonatomic) IBOutlet UITextField *OwnerField;

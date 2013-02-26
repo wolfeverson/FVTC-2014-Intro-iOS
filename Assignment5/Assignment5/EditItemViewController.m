@@ -57,7 +57,7 @@
     [temp setItem:[ItemField text]];
     [temp setOwner:[OwnerField text]];
     [temp setQuality:[QualityField text]];
-    
+    [_SharpItems setObject:temp atIndexedSubscript:CurrentIndex];
     [[self presentingViewController] dismissViewControllerAnimated:YES completion:Nil];
 }
 
@@ -68,5 +68,6 @@
 -(void) SetRowIndex: (int) Index
 {
     CurrentSharp = [_SharpItems objectAtIndex:Index];
+    CurrentIndex = Index;
 }
 @end

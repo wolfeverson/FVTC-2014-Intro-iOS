@@ -28,6 +28,7 @@
         [fakes setItem:@"Kitten"];
         [fakes setOwner:@"OwnerTest"];
         [fakes setQuality:@"QualTest"];
+        [_SharpItems addObject:fakes];
         
         
     }
@@ -93,15 +94,18 @@
 {
     return 1;
 }
+
 -(NSString *) pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
 {
     SharpItem *tempItem = [_SharpItems objectAtIndex:row];
     return [tempItem Item];
 }
 
+
+
 -(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
-    //do this on pickerview index select
+    //selected index change
 }
 
 

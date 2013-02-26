@@ -52,6 +52,7 @@
     [temp setItem:[ItemField text]];
     [temp setOwner:[OwnerField text]];
     [temp setQuality:[QualityField text]];
+    [_SharpItems addObject:temp];
     
     [[self presentingViewController] dismissViewControllerAnimated:YES completion:Nil];
 }
