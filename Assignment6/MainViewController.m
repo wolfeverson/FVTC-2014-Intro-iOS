@@ -18,7 +18,6 @@
 @implementation MainViewController
 @synthesize PickerView;
 
-//initializes.  also, dummy data(commented out)
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -51,7 +50,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-
 - (IBAction)AddButtonClick:(id)sender//loads new form for adding item
 {
     
@@ -65,7 +63,6 @@
     
     
 }
-
 
 - (IBAction)EditButtonClick:(id)sender //loads new form for changing ite,
 {
@@ -87,9 +84,6 @@
     }
 }
 
-/*
- Pickerview Initializing below.  Boilerplate. 
- */
 -(NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
 {
     return  [_SharpItems count];

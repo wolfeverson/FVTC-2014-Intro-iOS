@@ -1,27 +1,23 @@
 //
-//  Assignment5AppDelegate.m
-//  Assignment5
+//  IceCreamShoppeAppDelegate.m
+//  IceCreamShoppe
 //
-//  Created by student on 2/25/13.
-//  Copyright (c) 2013 WolfEverson. All rights reserved.
+//  Created by student on 3/4/13.
+//  Copyright (c) 2013 wolfeverson. All rights reserved.
 //
 
-#import "Assignment5AppDelegate.h"
+#import "IceCreamShoppeAppDelegate.h"
 #import "MainViewController.h"
-#import "NewItemViewController.h"
-#import "EditItemViewController.h"
-#import "SharpItem.h"
 
-@implementation Assignment5AppDelegate
+@implementation IceCreamShoppeAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
+    MainViewController *main = [[MainViewController alloc]init];
+    [[self window] setRootViewController:main];
     
-    //loads personalized viewcontrolled
-    MainViewController *MVC = [[MainViewController  alloc] init];
-    [[self window]setRootViewController:MVC];
     
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];

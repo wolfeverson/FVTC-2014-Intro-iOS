@@ -11,6 +11,7 @@
 #import "NewItemViewController.h"
 #import "EditItemViewController.h"
 #import "SharpItem.h"
+#import "TableView.h"
 
 @implementation Assignment5AppDelegate
 
@@ -19,9 +20,17 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     
-    //loads personalized viewcontrolled
-    MainViewController *MVC = [[MainViewController  alloc] init];
-    [[self window]setRootViewController:MVC];
+    /*
+     
+     !!!!!!!!!!!!!
+     All Comments can be found in tableview.m
+     Old files recyvled in project are blanked.
+     !!!!!!!!!!!!!
+     
+     
+     */
+    TableView *Table= [[TableView  alloc] init];
+    [[self window]setRootViewController:Table];
     
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
