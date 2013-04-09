@@ -100,12 +100,12 @@
 				3F1348AE1713A6030069CB1F /* Supporting Files */,
 				3F1348C41713A6790069CB1F /* MainViewController.h */,
 				3F1348C51713A6790069CB1F /* MainViewController.m */,
-				3F1348C71713A8410069CB1F /* GameViewController.h */,
-				3F1348C81713A8410069CB1F /* GameViewController.m */,
-				3F1348C91713A8410069CB1F /* GameViewController.xib */,
 				3F1348D21713B0910069CB1F /* GameDataController.h */,
 				3F1348D31713B0910069CB1F /* GameDataController.m */,
 				3F1348D41713B0910069CB1F /* GameDataController.xib */,
+				3F1348C71713A8410069CB1F /* GameViewController.h */,
+				3F1348C81713A8410069CB1F /* GameViewController.m */,
+				3F1348C91713A8410069CB1F /* GameViewController.xib */,
 			);
 			path = Assignment7;
 			sourceTree = "<group>";
@@ -305,6 +305,7 @@
 				3F1348C31713A6030069CB1F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

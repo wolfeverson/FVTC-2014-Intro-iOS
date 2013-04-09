@@ -21,7 +21,8 @@
     if (self)
     {
         // Custom initialization
-        [self getScreenDimensions];
+        [self buildGrid];
+        [self buildNumber];
     }
     return self;
 }
@@ -33,18 +34,73 @@
     _GameArray = [_GameString componentsSeparatedByString:@","];
 }
 
+
+/*
+ 
+ DataGrid is (35,150) -> (285,400)
+ 5x5 Grid.  Each square is 50x50 pixels.
+ 
+ */
+-(void) buildNumber
+{
+    NSMutableArray *TextLayers =[[NSMutableArray alloc] initWithCapacity:25];
+    int x = 35;
+    int y = 150;
+    for (int i = 0; i < 5; i++)
+    {
+        
+    }
+}
+
+
+
+
+-(void) buildGrid
+{
+    //attempt to build array of layers and paths?
+    NSMutableArray *ShapeLayers = [[NSMutableArray alloc] initWithCapacity:12];
+    NSMutableArray *ShapePaths = [[NSMutableArray alloc] initWithCapacity:12];
+    int x = 35;
+    int y = 150;
+    for (int i = 0; i < 12; i++)
+    {
+        if (i < 6)//horizontal
+        {
+            CAShapeLayer *TempShapeLayer = [CAShapeLayer layer];
+            UIBezierPath *TempPath = [UIBezierPath bezierPath];
+            [TempPath moveToPoint:CGPointMake(x, 150)];
+            [TempPath addLineToPoint:CGPointMake(x, 400)];
+            [TempPath closePath];
+            [TempShapeLayer setPath:[TempPath CGPath]];
+            [TempShapeLayer setLineWidth:3];
+            [TempShapeLayer setStrokeColor:[UIColor blackColor].CGColor];
+            [ShapePaths addObject:TempPath];
+            [ShapeLayers addObject:TempShapeLayer];
+            [[[self view] layer] addSublayer:ShapeLayers[i]];
+            x = x + 50;
+        }
+        else//vertical
+        {
+            CAShapeLayer *TempShapeLayer = [CAShapeLayer layer];
+            UIBezierPath *TempPath = [UIBezierPath bezierPath];
+            [TempPath moveToPoint:CGPointMake(35, y)];
+            [TempPath addLineToPoint:CGPointMake(285, y)];
+            [TempPath closePath];
+            [TempShapeLayer setPath:[TempPath CGPath]];
+            [TempShapeLayer setLineWidth:3];
+            [TempShapeLayer setStrokeColor:[UIColor blackColor].CGColor];
+            [ShapePaths addObject:TempPath];
+            [ShapeLayers addObject:TempShapeLayer];
+            [[[self view] layer] addSublayer:ShapeLayers[i]];
+            y= y + 50;
+        }
+    }
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self getScreenDimensions];
     // Do any additional setup after loading the view from its nib.
-}
-
-//Gets Dimensions of screen to make ratios?
--(void) getScreenDimensions
-{
-    _width = self.view.frame.size.width;
-    _height = self.view.frame.size.height;
 }
 
 - (void)didReceiveMemoryWarning

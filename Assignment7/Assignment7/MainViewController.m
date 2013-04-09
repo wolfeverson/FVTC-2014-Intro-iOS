@@ -51,16 +51,7 @@
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:Game];
     [self presentViewController:nav animated:YES completion:Nil];
     
-    
-    /*
-    GameViewController *Game = [[GameViewController alloc] init];
-    NSString *gamedatatest = @"11,6,9,15,13,24,26,27,16,28,44,38,43,31,45,54,48,50,59,52,69,74,71,75,68";
-    [Game BuildGameData:gamedatatest];
-    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:Game];
-    [self presentViewController:nav animated:YES completion:Nil];
-     */
-    
-    //This will be moved to game data controller.   Need an intermediate detail screen between table and game.  
+
     
     
     
