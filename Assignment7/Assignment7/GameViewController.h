@@ -11,7 +11,9 @@
 @interface GameViewController : UIViewController
 {
     NSArray *_GameArray;
-    NSString *_GameString;
+    NSArray *_CirclesArray;
+    NSArray *_ColArray;
+    NSArray *_RowArray;
     int _width;
     int _height;
 }
