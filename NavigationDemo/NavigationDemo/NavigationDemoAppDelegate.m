@@ -1,25 +1,35 @@
 //
-//  Assignment7AppDelegate.m
-//  Assignment7
+//  NavigationDemoAppDelegate.m
+//  NavigationDemo
 //
-//  Created by student on 4/8/13.
+//  Created by student on 4/15/13.
 //  Copyright (c) 2013 edu.fvtc. All rights reserved.
 //
 
-#import "Assignment7AppDelegate.h"
+#import "NavigationDemoAppDelegate.h"
 #import "MainViewController.h"
+#import "ConfigViewController.h"
+#import "WizardViewController.h"
 
-@implementation Assignment7AppDelegate
+@implementation NavigationDemoAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
 
+    
+    
     MainViewController *main = [[MainViewController alloc] init];
-    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:main];
-    [[self window]setRootViewController:nav];
-    //End Entry
+    ConfigViewController  *conf = [[ConfigViewController alloc] init];
+    NSArray *viewControllers = [NSArray arrayWithObjects:main, conf, nil];
+    UITabBarController *tab = [[UITabBarController alloc] init];
+    [tab setViewControllers:viewControllers];
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:tab];
+    //[nav setNavigationBarHidden:YES];
+    
+    [[self window] setRootViewController:nav];
+    
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;

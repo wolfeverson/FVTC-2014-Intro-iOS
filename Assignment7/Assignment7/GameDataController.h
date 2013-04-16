@@ -7,8 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BingoGame.h"
 
 @interface GameDataController : UIViewController
+{
+    BingoGame *_GameData;
+}
 - (IBAction)ButtonJoinGameClicked:(id)sender;
+- (void) SetBingoGame:(BingoGame*) game;
+@property (weak, nonatomic) IBOutlet UILabel *gameIDLabel;
+@property (weak, nonatomic) IBOutlet UILabel *GameCreatedLabel;
+@property (weak, nonatomic) IBOutlet UILabel *GameWinCountLabel;
+@property (weak, nonatomic) IBOutlet UILabel *GameWinLimitLabel;
+@property (weak, nonatomic) IBOutlet UILabel *GameMaxPlayersLabel;
+@property (weak, nonatomic) IBOutlet UILabel *GameSpotsLeftLabel;
 
 @end

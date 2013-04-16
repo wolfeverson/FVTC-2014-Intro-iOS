@@ -120,12 +120,13 @@
     }
 }
 
-//builds circles (that would appear on click)  -----> Currently Red.
+//builds circles (that would appear on click)
 -(void) buildCircles
 {
     NSMutableArray *CircleLayers =[[NSMutableArray alloc] initWithCapacity:25];
     int x = 35;
     int y = 150;
+    int counter = 1;
     for (int col = 0; col < 5; col++)
     {
         for (int row = 0; row < 5; row ++)
@@ -134,8 +135,10 @@
             UIBezierPath *circleBez = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(x+4, y+4, 40, 40) cornerRadius:40];
             [tempCircle setLineWidth:2];
             [tempCircle setFillColor:[UIColor clearColor].CGColor];
-            [tempCircle setStrokeColor:[UIColor redColor].CGColor];
+            [tempCircle setStrokeColor:[UIColor clearColor].CGColor];
             [tempCircle setPath:[circleBez CGPath]];
+            [tempCircle setName:[[NSString alloc] initWithFormat:@"Circle%i", counter]];
+            counter ++;
             [CircleLayers addObject:tempCircle];
             [[[self view] layer] addSublayer:tempCircle];
             y = y + 50;
@@ -146,48 +149,35 @@
     _CirclesArray =CircleLayers;
 }
 
-//builds overlap rectangles in dual arrays for touch interaction.  
+//builds rectangle fields so touches are not limited to circles.  
 -(void) buildTouchyFields
 {
     int x = 35;
     int y = 150;
-    NSMutableArray *tempColArray = [[NSMutableArray alloc] init];
-    NSMutableArray *tempRowArray = [[NSMutableArray alloc] init];
+    int counter = 1;
     for (int i = 1; i < 6; i++)
     {
-        CAShapeLayer *LineLayer = [CAShapeLayer  layer];
-        UIBezierPath *path = [UIBezierPath bezierPathWithRect:CGRectMake(x, y, 50, 250)];
-        [LineLayer setPath:[path CGPath]];
-        [LineLayer setFillColor:[UIColor clearColor].CGColor];
-        [LineLayer setLineWidth:0];
-        [LineLayer setName:[[NSString alloc] initWithFormat:@"Col%i", i]];
-        [[[self view] layer] addSublayer:LineLayer];
-        [tempColArray addObject:LineLayer];
-        x = x + 50;
+        for (int i = 1; i < 6; i++)
+        {
+            CAShapeLayer *LineLayer = [CAShapeLayer  layer];
+            UIBezierPath *path = [UIBezierPath bezierPathWithRect:CGRectMake(x, y, 49, 49)];
+            [LineLayer setPath:[path CGPath]];
+            [LineLayer setFillColor:[UIColor clearColor].CGColor];
+            [LineLayer setLineWidth:0];
+            [LineLayer setName:[[NSString alloc] initWithFormat:@"TouchPad%i", counter]];
+            [[[self view] layer] addSublayer:LineLayer];
+            y = y + 50;
+            counter ++;
+        }
+        x= x + 50;
+        y= 150;
     }
-    x = 35;
-    _ColArray = tempColArray;
-    
-    for (int i = 1; i < 6; i++)
-    {
-        CAShapeLayer *LineLayer = [CAShapeLayer  layer];
-        UIBezierPath *path = [UIBezierPath bezierPathWithRect:CGRectMake(x, y, 250, 50)];
-        [LineLayer setPath:[path CGPath]];
-        [LineLayer setFillColor:[UIColor clearColor].CGColor];
-        [LineLayer setLineWidth:0];
-        [LineLayer setName:[[NSString alloc] initWithFormat:@"Row%i", i]];
-        [[[self view] layer] addSublayer:LineLayer];
-        [tempRowArray addObject:LineLayer];
-        y = y + 50;
-    }
-    _RowArray = tempRowArray;
 }
 
+//checks touch event.  lights up circle Even if rectangle is clicked!
 -(void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    NSLog(@"Touchys!");
     CGPoint p = [[touches anyObject] locationInView:[self view]];
-    
     for (CAShapeLayer *l in self.view.layer.sublayers)
     {
          CGAffineTransform transf = CGAffineTransformMakeTranslation(-l.position.x, -l.position.y);
@@ -195,25 +185,32 @@
         {
             if (CGPathContainsPoint(l.path, &transf, p, NO))
             {
-                NSLog(@"Layer Touched:  %@", l.name);
-                NSString *row = [[NSString alloc] initWithFormat:@"%@", l.name];
-                switch (row)
+                if (l.name !=  NULL)
                 {
-                    case <#constant#>:
-                        <#statements#>
-                        break;
-                        
-                    default:
-                        break;
+                    NSString *Touched = [[NSString alloc] initWithFormat:@"%@", l.name];                   
+                    NSString *match = @"Pad";
+                    NSString *pre;
+                    NSString *post;
+                    
+                    NSScanner *scanner = [NSScanner scannerWithString:Touched];
+                    [scanner scanUpToString:match intoString:&pre];
+                    [scanner scanString:match intoString:nil];
+                    post = [Touched substringFromIndex:scanner.scanLocation];
+                    if ([pre isEqualToString:@"Touch"])
+                    {
+                        NSString *CircleTouched = [[NSString alloc] initWithFormat:@"Circle%@",post];
+                        for (CAShapeLayer *l in self.view.layer.sublayers)
+                        {
+                            if ([l.name isEqualToString:CircleTouched])
+                            {
+                                [l setStrokeColor:[UIColor redColor].CGColor];
+                            }
+                        }
+                    }
                 }
             }
         }
     }
-    
-    
-    
-    
-    
 }
 
 

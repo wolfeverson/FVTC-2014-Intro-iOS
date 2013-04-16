@@ -11,6 +11,9 @@
 @interface MainViewController : UITableViewController
 {
     NSMutableArray *_GameCount;
+    NSURLConnection *_connection;
+    NSMutableData *_httpdata;
+    NSArray *_Games;
 }
 
 
