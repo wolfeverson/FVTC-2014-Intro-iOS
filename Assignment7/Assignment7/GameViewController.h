@@ -14,10 +14,13 @@
     NSArray *_CirclesArray;
     NSArray *_ColArray;
     NSArray *_RowArray;
+    NSString *_GameId;
     int _width;
     int _height;
 }
 
+@property (weak, nonatomic) IBOutlet UILabel *GameIdLabel;
 -(void) BuildGameData: (NSString *) ArrayString;
+-(void) SetGameId: (NSString *) g_id;
 
 @end

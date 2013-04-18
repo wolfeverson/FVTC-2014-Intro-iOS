@@ -24,6 +24,7 @@
     return self;
 }
 
+//sets labels to bingogame value passed in from prior view
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -33,7 +34,9 @@
     [GameMaxPlayersLabel setText:[_GameData user_limit]];
      [GameWinCountLabel setText:[_GameData win_count]];
      [GameWinLimitLabel setText:[_GameData win_limit]];
-     int spotsleft = (int)[_GameData user_limit] - (int)[_GameData user_count];
+    int usercount = [[_GameData user_count] intValue];
+    int userlimit = [[_GameData user_limit] intValue];
+    int spotsleft = userlimit - usercount;
     [GameSpotsLeftLabel setText:[NSString stringWithFormat:@"%i", spotsleft]];
 }
 
@@ -43,21 +46,114 @@
     // Dispose of any resources that can be recreated.
 }
 
+//gets value passed in from prior view.
 - (void) SetBingoGame:(BingoGame*) game
 {
     _GameData = game;
 }
 
+//gets board data.  joins game with user id. 
 - (IBAction)ButtonJoinGameClicked:(id)sender
 
 {
-    //Must call "Join game" function to get game board.
-     GameViewController *Game = [[GameViewController alloc] init];
-     NSString *gamedatatest = @"11,6,9,15,13,24,26,27,16,28,44,38,43,31,45,54,48,50,59,52,69,74,71,75,68";
-     [Game BuildGameData:gamedatatest];
-     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:Game];
-     [self presentViewController:nav animated:YES completion:Nil];
-    
-    
+    NSString *url = @"http://bingo.humboldttechgroup.com:1111/?cmd=joingame";
+    [self postDataWithUrl:url];
 }
+
+//sets board for next view.  loads next view.  
+-(void) LoadGameBoard
+{
+    GameViewController *Game = [[GameViewController alloc] init];
+    [Game BuildGameData:_GameBoard];
+    NSString *gameids = [[NSString alloc] initWithFormat:@"%@", [_GameData game_id]];
+    [Game SetGameId:gameids];
+    [self.navigationController pushViewController:Game animated:YES];
+}
+
+
+//takes json array.  builds into _gamecount full of bingogame Class
+-(void) connectionDidFinishLoading:(NSURLConnection *) connection
+{
+    NSDictionary *json = [NSJSONSerialization JSONObjectWithData:_httpdata options:kNilOptions error:Nil];
+    if ([[json objectForKey:@"status"] isEqualToString:@"ok"])
+    {
+        if ([[json objectForKey:@"message"] isEqualToString:@"game sucessfully joined"])
+        {
+            NSLog(@"JoinGame - OK - New Board");
+        }
+        else if ([[json objectForKey:@"message"] isEqualToString:@"user already joined game"])
+        {
+            NSLog(@"JoinGame - OK - Old Board");
+        }
+        _GameBoard = [json objectForKey:@"board"];
+        [self LoadGameBoard];
+    }
+    else
+    {
+        NSLog(@"Server Error - JoinGame");
+    }
+}
+
+//webserver boilerplate
+-(void) connection:(NSURLConnection *) conn didReceiveData:(NSData *)data
+{
+    [_httpdata appendData:data];
+}
+//webserver boilerplate w/ json building
+-(void) postDataWithUrl:(NSString *) urlString
+{
+    _httpdata = [[NSMutableData alloc]init];
+    NSURL *url = [NSURL URLWithString:urlString];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+    [request setHTTPMethod:@"POST"];
+    NSMutableString *postbody = [[NSMutableString alloc] init];
+    //build json out string
+    NSString *timestamp = [self getCurrentDateUTC];
+    NSString *gameid = [_GameData game_id];
+    NSString *userid = @"1";   //This can be changed later.  Will not be dynamic.
+    [postbody appendFormat:@"{\"timestamp\": \"%@\",", timestamp];
+    [postbody appendFormat:@"\"game_id\": \"%@\",", gameid];
+    [postbody appendFormat:@"\"user_id\":\"%@\"}", userid];
+    //json build end.
+    NSData *postData = [postbody dataUsingEncoding:NSUTF8StringEncoding];
+    [request setHTTPBody:postData];
+    _connection = [[NSURLConnection alloc] initWithRequest:request delegate:self startImmediately:YES];
+}
+
+//gets timestamp string. decimal dropped-nothing more.  
+-(NSString *)getCurrentDateUTC
+{
+    float fseconds = [[NSDate date] timeIntervalSince1970];
+    //fseconds = fseconds/100;
+    //fseconds = roundf(fseconds);
+    int iseconds = (int) floor(fseconds);
+    NSString *t =  [NSString stringWithFormat:@"%i", iseconds];
+    return t;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @end

@@ -14,6 +14,7 @@
 @end
 
 @implementation GameViewController
+@synthesize GameIdLabel;
 /*
  
  DataGrid is (35,150) -> (285,400)
@@ -36,6 +37,8 @@
     [self buildNumber];
     [self buildCircles];
     [self buildTouchyFields];
+    [GameIdLabel setText:_GameId];
+    
 }
 - (void)didReceiveMemoryWarning
 {
@@ -47,6 +50,11 @@
 -(void) BuildGameData: (NSString *) ArrayString
 {
     _GameArray = [ArrayString componentsSeparatedByString:@","];
+}
+//called from outside.  passes game_id in (for title)
+-(void) SetGameId: (NSString *) g_id
+{
+    _GameId = g_id;
 }
 
 //puts each number in place to fill bingo grid.

@@ -12,6 +12,9 @@
 @interface GameDataController : UIViewController
 {
     BingoGame *_GameData;
+    NSURLConnection *_connection;
+    NSMutableData *_httpdata;
+    NSString *_GameBoard;
 }
 - (IBAction)ButtonJoinGameClicked:(id)sender;
 - (void) SetBingoGame:(BingoGame*) game;

@@ -43,7 +43,7 @@
 -(UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *Cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"UITableViewCell"];
-    NSString *display = [NSString stringWithFormat:@"Game %i", [indexPath row]];
+    NSString *display = [NSString stringWithFormat:@"Game %i", ([indexPath row]+1)];
     [[Cell textLabel]setText:display];
     return Cell;
 }
