@@ -110,7 +110,7 @@
     //build json out string
     NSString *timestamp = [self getCurrentDateUTC];
     NSString *gameid = [_GameData game_id];
-    NSString *userid = @"1";   //This can be changed later.  Will not be dynamic.
+    NSString *userid = @"5";   //Created User Id
     [postbody appendFormat:@"{\"timestamp\": \"%@\",", timestamp];
     [postbody appendFormat:@"\"game_id\": \"%@\",", gameid];
     [postbody appendFormat:@"\"user_id\":\"%@\"}", userid];

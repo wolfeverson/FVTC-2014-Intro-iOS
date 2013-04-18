@@ -17,10 +17,14 @@
     NSString *_GameId;
     int _width;
     int _height;
+    NSURLConnection *_connection;
+    NSMutableData *_httpdata;
+    NSTimer *_Timer;
 }
 
 @property (weak, nonatomic) IBOutlet UILabel *GameIdLabel;
 -(void) BuildGameData: (NSString *) ArrayString;
 -(void) SetGameId: (NSString *) g_id;
+@property (weak, nonatomic) IBOutlet UILabel *GameNumberLabel;
 
 @end

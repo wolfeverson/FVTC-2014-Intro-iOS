@@ -22,6 +22,8 @@
 		3F1348D11713AB2F0069CB1F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F1348D01713AB2F0069CB1F /* QuartzCore.framework */; };
 		3F1348D51713B0910069CB1F /* GameDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F1348D31713B0910069CB1F /* GameDataController.m */; };
 		3F1348D61713B0910069CB1F /* GameDataController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F1348D41713B0910069CB1F /* GameDataController.xib */; };
+		3F95EECC172072CF003987EC /* CreateUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F95EECA172072CF003987EC /* CreateUserViewController.m */; };
+		3F95EECD172072CF003987EC /* CreateUserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F95EECB172072CF003987EC /* CreateUserViewController.xib */; };
 		3FA7DFA9171CE57C004A59CC /* BingoGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FA7DFA8171CE57C004A59CC /* BingoGame.m */; };
 /* End PBXBuildFile section */
 
@@ -48,6 +50,9 @@
 		3F1348D21713B0910069CB1F /* GameDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameDataController.h; sourceTree = "<group>"; };
 		3F1348D31713B0910069CB1F /* GameDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameDataController.m; sourceTree = "<group>"; };
 		3F1348D41713B0910069CB1F /* GameDataController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameDataController.xib; sourceTree = "<group>"; };
+		3F95EEC9172072CF003987EC /* CreateUserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateUserViewController.h; sourceTree = "<group>"; };
+		3F95EECA172072CF003987EC /* CreateUserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateUserViewController.m; sourceTree = "<group>"; };
+		3F95EECB172072CF003987EC /* CreateUserViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreateUserViewController.xib; sourceTree = "<group>"; };
 		3FA7DFA7171CE57C004A59CC /* BingoGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BingoGame.h; sourceTree = "<group>"; };
 		3FA7DFA8171CE57C004A59CC /* BingoGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BingoGame.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -111,6 +116,7 @@
 				3F1348C91713A8410069CB1F /* GameViewController.xib */,
 				3FA7DFA7171CE57C004A59CC /* BingoGame.h */,
 				3FA7DFA8171CE57C004A59CC /* BingoGame.m */,
+				3F95EECE172074C3003987EC /* CreateUser */,
 			);
 			path = Assignment7;
 			sourceTree = "<group>";
@@ -127,6 +133,16 @@
 				3F1348BD1713A6030069CB1F /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3F95EECE172074C3003987EC /* CreateUser */ = {
+			isa = PBXGroup;
+			children = (
+				3F95EECA172072CF003987EC /* CreateUserViewController.m */,
+				3F95EEC9172072CF003987EC /* CreateUserViewController.h */,
+				3F95EECB172072CF003987EC /* CreateUserViewController.xib */,
+			);
+			name = CreateUser;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -187,6 +203,7 @@
 				3F1348BE1713A6030069CB1F /* Default-568h@2x.png in Resources */,
 				3F1348CB1713A8410069CB1F /* GameViewController.xib in Resources */,
 				3F1348D61713B0910069CB1F /* GameDataController.xib in Resources */,
+				3F95EECD172072CF003987EC /* CreateUserViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -203,6 +220,7 @@
 				3F1348CA1713A8410069CB1F /* GameViewController.m in Sources */,
 				3F1348D51713B0910069CB1F /* GameDataController.m in Sources */,
 				3FA7DFA9171CE57C004A59CC /* BingoGame.m in Sources */,
+				3F95EECC172072CF003987EC /* CreateUserViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

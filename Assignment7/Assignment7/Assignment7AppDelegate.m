@@ -8,6 +8,7 @@
 
 #import "Assignment7AppDelegate.h"
 #import "MainViewController.h"
+#import "CreateUserViewController.h"
 
 @implementation Assignment7AppDelegate
 
@@ -18,6 +19,12 @@
 
     MainViewController *main = [[MainViewController alloc] init];
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:main];
+    
+    /*
+    CreateUserViewController *cre = [[CreateUserViewController alloc]init];
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:cre];
+    */
+    
     [[self window]setRootViewController:nav];
     //End Entry
     self.window.backgroundColor = [UIColor whiteColor];

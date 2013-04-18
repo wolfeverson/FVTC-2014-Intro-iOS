@@ -14,11 +14,13 @@
 @end
 
 @implementation GameViewController
-@synthesize GameIdLabel;
+@synthesize GameIdLabel, GameNumberLabel;
 /*
  
  DataGrid is (35,150) -> (285,400)
  5x5 Grid.  Each square is 50x50 pixels.
+ 
+ Timer ticks.  After back out of game.  Tick.  Tick.  Tick.   
  
  */
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -38,6 +40,7 @@
     [self buildCircles];
     [self buildTouchyFields];
     [GameIdLabel setText:_GameId];
+    _Timer = [NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(tick) userInfo:Nil repeats:YES];
     
 }
 - (void)didReceiveMemoryWarning
@@ -221,7 +224,79 @@
     }
 }
 
+//timer tick.  calls new number function. 
+-(void) tick
+{
+    NSString *url = @"http://bingo.humboldttechgroup.com:1111/?cmd=getnumber";
+    [self postDataWithUrl:url];
+}
 
+
+/*
+ *
+ *
+ Sample Data DID NOT MATCH LIVE.  QQ
+ *
+ *
+ */
+ 
+ 
+
+//takes json array.  builds into new number.  updates number.
+-(void) connectionDidFinishLoading:(NSURLConnection *) connection
+{
+    NSDictionary *json = [NSJSONSerialization JSONObjectWithData:_httpdata options:kNilOptions error:Nil];
+    if ([[json objectForKey:@"status"] isEqualToString:@"ok"])
+    {
+        if ([[json objectForKey:@"message"] isEqualToString:@"number requested"])
+        {
+            NSLog(@"GetNumber - OK");
+        }
+        NSString *newnumber = [json objectForKey:@"number"];
+        [GameNumberLabel setText:newnumber];
+    }
+    else
+    {
+        NSLog(@"Server Error - GetNumber");
+    }
+}
+
+//webserver boilerplate
+-(void) connection:(NSURLConnection *) conn didReceiveData:(NSData *)data
+{
+    [_httpdata appendData:data];
+}
+//webserver boilerplate w/ json building
+-(void) postDataWithUrl:(NSString *) urlString
+{
+    _httpdata = [[NSMutableData alloc]init];
+    NSURL *url = [NSURL URLWithString:urlString];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+    [request setHTTPMethod:@"POST"];
+    NSMutableString *postbody = [[NSMutableString alloc] init];
+    //build json out string
+    NSString *timestamp = [self getCurrentDateUTC];
+    NSString *gameid = _GameId;
+    NSString *userid = @"5";   //Created user Id
+    [postbody appendFormat:@"{\"timestamp\": \"%@\",", timestamp];
+    [postbody appendFormat:@"\"game_id\": \"%@\",", gameid];
+    [postbody appendFormat:@"\"user_id\":\"%@\"}", userid];
+    //json build end.
+    NSData *postData = [postbody dataUsingEncoding:NSUTF8StringEncoding];
+    [request setHTTPBody:postData];
+    _connection = [[NSURLConnection alloc] initWithRequest:request delegate:self startImmediately:YES];
+}
+
+//gets timestamp string. decimal dropped-nothing more.
+-(NSString *)getCurrentDateUTC
+{
+    float fseconds = [[NSDate date] timeIntervalSince1970];
+    //fseconds = fseconds/100;
+    //fseconds = roundf(fseconds);
+    int iseconds = (int) floor(fseconds);
+    NSString *t =  [NSString stringWithFormat:@"%i", iseconds];
+    return t;
+}
 
 
 
