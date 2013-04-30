@@ -285,6 +285,8 @@
 		3FB1B3AF1726022800CDA888 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_OBJCPP_ARC_ABI = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PIzzaMan/PIzzaMan-Prefix.pch";
 				INFOPLIST_FILE = "PIzzaMan/PIzzaMan-Info.plist";
@@ -296,6 +298,8 @@
 		3FB1B3B01726022800CDA888 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_OBJCPP_ARC_ABI = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PIzzaMan/PIzzaMan-Prefix.pch";
 				INFOPLIST_FILE = "PIzzaMan/PIzzaMan-Info.plist";
@@ -323,6 +327,7 @@
 				3FB1B3B01726022800CDA888 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
