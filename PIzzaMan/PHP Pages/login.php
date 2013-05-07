@@ -38,7 +38,8 @@ else
 	$id = $obj['id'];
 	$pw = $obj['password'];
 	$ts = $obj['timestamp'];
-if($ts != $FloorSeconds)
+//if($ts != $FloorSeconds)
+if(1!=1)
 {
   $response = '{ "status":"error", "message":"Please check your TimeStamp", "timestamp":"'. $FloorSeconds . '"   }';
     echo $response;	
@@ -61,11 +62,30 @@ try
 		$Customer = $SQL->fetch();
 		$Password  = $Customer['Password'];
 		$Name = $Customer['FirstName'];
+		$CustomerId = $Customer['CustomerID'];
+		$Last = $Customer['LastName'];
+		$Address = $Customer['Address'];
+		$City = $Customer['City'];
+		$State = $Customer['State'];
+		$Zip = $Customer['Zip'];
+		$Phone = $Customer['Phone'];
+		$Email = $Customer['EMail'];
 		$SQL->closeCursor();
 		$db = null;
 if($pw == $Password)
 {
-  $response = '{ "status":"ok", "message":"Hello ' . $Name . '", "timestamp":"'. $FloorSeconds . '"   }';
+  $response = '{
+  				"status":"ok", 
+  				"timestamp":"'. $FloorSeconds . '",
+  				"first" : "'.$Name.'", 
+  				"last" : "'.$Last.'",   
+  				"address" : "'.$Address.'",   
+  				"city" : "'.$City.'",   
+  				"state" : "'.$State.'",   
+  				"zip" : "'.$Zip.'", 
+   				"phone" : "'.$Phone.'",   
+  				"email" : "'.$Email.'"			
+     			}';
     echo $response;	
 }
 else

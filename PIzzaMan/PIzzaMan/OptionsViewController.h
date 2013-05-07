@@ -9,5 +9,13 @@
 #import <UIKit/UIKit.h>
 
 @interface OptionsViewController : UIViewController
+{
+    NSURLConnection *_connection;
+    NSMutableData *_httpdata;
+}
+- (IBAction)ButtonOrderPlaceClicked:(id)sender;
+- (IBAction)ButtonUpdateAccountClicked:(id)sender;
+- (IBAction)ButtonDeleteAccountClicked:(id)sender;
+- (IBAction)ButtonLogOutClicked:(id)sender;
 
 @end

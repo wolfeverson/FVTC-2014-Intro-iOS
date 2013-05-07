@@ -21,7 +21,9 @@
  */
 
 @implementation LoginDataClass
-@synthesize UserName,Password;
+@synthesize UserName,Password,First,Last,Email,Phone,Address,City,State,Zip;
+
+
 
 static LoginDataClass *instance =nil;
 +(LoginDataClass *)getInstance

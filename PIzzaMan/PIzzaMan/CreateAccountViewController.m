@@ -8,6 +8,7 @@
 
 #import "CreateAccountViewController.h"
 #import "LoginDataClass.h"
+#import "OptionsViewController.h"
 
 @interface CreateAccountViewController ()
 
@@ -56,6 +57,7 @@
 {
     BOOL isValid = true;
     BOOL isPassworderror = false;
+    BOOL isRegex = true;
     NSString *first = [FirstNameField text];
     NSString *last = [LastNameField text];
     NSString *Phone = [PhoneField text];
@@ -66,8 +68,19 @@
     NSString *Zip = [ZipField text];
     NSString *Password = [PasswordField text];
     NSString *PassVer = [PasswordVerField text];
+    
+    //phone regex
+    NSString *phoneRegex = @"\\(?([0-9]{3})\\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})";
+    NSPredicate *phoneTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", phoneRegex];
+    BOOL testedphone = [phoneTest evaluateWithObject:Phone];
+    //email regex
+    NSString *emailRegex = @"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}";
+    NSPredicate *emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", emailRegex];
+    BOOL testedemail = [emailTest evaluateWithObject:Email];
+    
+    
 
-    if ([first isEqualToString: @""])   //THIS IS NOT ENOUGH VALIDATION FOR SERIOUS APP.  
+    if ([first isEqualToString: @""])   //THIS IS NOT ENOUGH VALIDATION FOR SERIOUS APP.
     {
         isValid = false;
     }
@@ -75,13 +88,13 @@
     {
         isValid = false;
     }
-    else if ([Phone isEqualToString: @""])
+    else if (!testedphone)
     {
-        isValid = false;
+        isRegex = false;
     }
-    else if([Email isEqualToString: @""])
+    else if(!testedemail)
     {
-        isValid = false;
+        isRegex = false;
     }
     else if ([Address isEqualToString: @""])
     {
@@ -108,6 +121,8 @@
         isValid = false;
         isPassworderror = true;
     }
+    
+    
     if (isPassworderror)
     {
     UIAlertView *alert = [[UIAlertView alloc]initWithTitle: @"Create Failed"
@@ -126,11 +141,27 @@
                                              otherButtonTitles:@"OK",nil];
         [alert show];
     }
+    else if (!isRegex)
+    {
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle: @"Create Failed"
+                                                       message: @"Ensure all fields are Valid"
+                                                      delegate: self
+                                             cancelButtonTitle:@"Cancel"
+                                             otherButtonTitles:@"OK",nil];
+        [alert show];
+    }
     else
     {
     //data "valid".  hit web service
         NSString *url = @"http://itweb.fvtc.edu/200102410/iOS/CreateAccount.php";
         [self postDataWithUrl:url :first :last :Phone :Email :Address :City :State :Zip :Password];
+        _First = [FirstNameField text];
+        _Last = [LastNameField text];
+        _Email = [EmailField text];
+        _Phone = [PhoneField text];
+        _Address = [AddressField text];
+        _City = [CityField text];
+        _State = [StateField text];
     }
 }
 
@@ -151,10 +182,21 @@
             LoginDataClass *obj=[LoginDataClass getInstance];
             obj.UserName = _UserID;
             obj.Password = _UserPass;
+            obj.First = _First;
+            obj.Last = _Last;
+            obj.Email = _Email;
+            obj.Phone = _Phone;
+            obj.Address = _Address;
+            obj.City = _City;
+            obj.State = _State;
+            obj.Zip = _Zip;
+            OptionsViewController *o = [[OptionsViewController alloc] init];
+            [self.navigationController pushViewController:o animated:YES];
+            
         }
         else
         {
-            NSString *message = [json objectForKey:@"message"];
+            NSString *message = [json objectForKey:@"message"]; 
             NSLog(@"%@", message);
         }
     }

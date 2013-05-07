@@ -24,6 +24,8 @@
 		3FB1B3C0172608D100CDA888 /* CreateAccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FB1B3BE172608D100CDA888 /* CreateAccountViewController.xib */; };
 		3FB1B3C417260F8300CDA888 /* OptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FB1B3C217260F8300CDA888 /* OptionsViewController.m */; };
 		3FB1B3C517260F8300CDA888 /* OptionsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FB1B3C317260F8300CDA888 /* OptionsViewController.xib */; };
+		3FB32A6917387759008A96E4 /* UpdateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FB32A6717387759008A96E4 /* UpdateViewController.m */; };
+		3FB32A6A17387759008A96E4 /* UpdateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FB32A6817387759008A96E4 /* UpdateViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +54,9 @@
 		3FB1B3C117260F8300CDA888 /* OptionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OptionsViewController.h; sourceTree = "<group>"; };
 		3FB1B3C217260F8300CDA888 /* OptionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OptionsViewController.m; sourceTree = "<group>"; };
 		3FB1B3C317260F8300CDA888 /* OptionsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OptionsViewController.xib; sourceTree = "<group>"; };
+		3FB32A6617387759008A96E4 /* UpdateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpdateViewController.h; sourceTree = "<group>"; };
+		3FB32A6717387759008A96E4 /* UpdateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpdateViewController.m; sourceTree = "<group>"; };
+		3FB32A6817387759008A96E4 /* UpdateViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UpdateViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +118,9 @@
 				3FB1B3C117260F8300CDA888 /* OptionsViewController.h */,
 				3FB1B3C217260F8300CDA888 /* OptionsViewController.m */,
 				3FB1B3C317260F8300CDA888 /* OptionsViewController.xib */,
+				3FB32A6617387759008A96E4 /* UpdateViewController.h */,
+				3FB32A6717387759008A96E4 /* UpdateViewController.m */,
+				3FB32A6817387759008A96E4 /* UpdateViewController.xib */,
 			);
 			path = PIzzaMan;
 			sourceTree = "<group>";
@@ -199,6 +207,7 @@
 				3FB1B3B8172602D600CDA888 /* pizzadeliveryman.png in Resources */,
 				3FB1B3C0172608D100CDA888 /* CreateAccountViewController.xib in Resources */,
 				3FB1B3C517260F8300CDA888 /* OptionsViewController.xib in Resources */,
+				3FB32A6A17387759008A96E4 /* UpdateViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -215,6 +224,7 @@
 				3FB1B3BB1726050500CDA888 /* LoginDataClass.m in Sources */,
 				3FB1B3BF172608D100CDA888 /* CreateAccountViewController.m in Sources */,
 				3FB1B3C417260F8300CDA888 /* OptionsViewController.m in Sources */,
+				3FB32A6917387759008A96E4 /* UpdateViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,6 +9,7 @@
 #import "LoginViewcontroller.h"
 #import "CreateAccountViewController.h"
 #import "LoginDataClass.h"
+#import "OptionsViewController.h"
 
 @interface LoginViewcontroller ()
 
@@ -71,11 +72,19 @@
     NSDictionary *json = [NSJSONSerialization JSONObjectWithData:_httpdata options:kNilOptions error:Nil];
     if ([[json objectForKey:@"status"] isEqualToString:@"ok"])
     {
-        NSString *message = [json objectForKey:@"message"];
-        NSLog(@"%@", message);
         LoginDataClass *obj=[LoginDataClass getInstance];
         obj.UserName = _UserID;
         obj.Password = _UserPass;
+        obj.First = [json objectForKey:@"first"];
+        obj.Last = [json objectForKey:@"last"];
+        obj.Address = [json objectForKey:@"address"];
+        obj.City = [json objectForKey:@"city"];
+        obj.State = [json objectForKey:@"state"];
+        obj.Zip = [json objectForKey:@"zip"];
+        obj.Phone = [json objectForKey:@"phone"];
+        obj.Email = [json objectForKey:@"email"];
+        OptionsViewController *o = [[OptionsViewController alloc] init];
+        [self.navigationController pushViewController:o animated:YES];
      }
     else
     {

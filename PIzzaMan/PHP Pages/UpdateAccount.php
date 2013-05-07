@@ -2,6 +2,7 @@
 /*
  * Sample Input
  * {
+ * "id":"3",
  * "first":"Joe",
  * "last":"B",
  * "phone":"(555)555-5555",
@@ -17,9 +18,7 @@
  * Sample Successful Return
  * {
  * "status":"ok",
- * "message":"Account Creation Successful",
- * "userid":"19",
- * "userpass":"Secret",
+ * "message":"Account Update Successful",
  * "timestamp":"2264352"
  * }
  */
@@ -41,6 +40,7 @@ if (count($obj) == 0)
 }
 else
 {
+	$id = $obj['id'];
 	$first = $obj['first'];
 	$last = $obj['last'];
 	$phone = $obj['phone'];
@@ -68,9 +68,10 @@ try
 		$password = '60314_200102410';	
 		$options = array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION);		
 		$db = new PDO ($dsn,$username,$password,$options);
-		$insert = "Insert Into CustomerInfo (FirstName, LastName, Address, City, State, Zip, Phone, Email, Password) 
-					Values(:FirstName, :LastName, :Address, :City, :State, :Zip, :Phone, :Email, :Password)";
-		$SQL = $db->prepare($insert);
+		$update = "UPDATE CustomerInfo SET FirstName = :FirstName, LastName = :LastName, Address = :Address, City = :City, 
+					State = :State, Zip = :Zip, Phone = :Phone, Email = :Email, Password = :Password WHERE CustomerID = :CustomerID";
+		$SQL = $db->prepare($update);
+		$SQL->bindValue(':CustomerID', $id);
 		$SQL->bindValue(':FirstName', $first);
 		$SQL->bindValue(':LastName', $last);		
 		$SQL->bindValue(':Address', $address);
@@ -82,9 +83,8 @@ try
 		$SQL->bindValue(':Password', $pass);			
 		$SQL->execute();
 		$SQL->closeCursor();
-		$custid = $db->lastInsertId();
 		$db = null;
-  		$response = '{ "status":"ok", "message":"Creation Successful","userid":"'.$custid.'","userpass":"'.$password.'","timestamp":"'. $FloorSeconds . '"   }';
+  		$response = '{ "status":"ok", "message":"Update Successful","timestamp":"'. $FloorSeconds . '"}';
     	echo $response;	
 }//end try
 catch (PDOException $ex)
