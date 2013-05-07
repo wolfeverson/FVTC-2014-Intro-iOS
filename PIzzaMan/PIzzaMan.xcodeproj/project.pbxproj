@@ -59,8 +59,8 @@
 		3FB32A6617387759008A96E4 /* UpdateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpdateViewController.h; sourceTree = "<group>"; };
 		3FB32A6717387759008A96E4 /* UpdateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpdateViewController.m; sourceTree = "<group>"; };
 		3FB32A6817387759008A96E4 /* UpdateViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UpdateViewController.xib; sourceTree = "<group>"; };
-		3FB32A6B1738933B008A96E4 /* pizza114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pizza114.png; sourceTree = "<group>"; };
-		3FB32A6D1738933F008A96E4 /* pizza587.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pizza587.png; sourceTree = "<group>"; };
+		3FB32A6B1738933B008A96E4 /* pizza114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pizza114.png; path = ../pizza114.png; sourceTree = "<group>"; };
+		3FB32A6D1738933F008A96E4 /* pizza587.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pizza587.png; path = ../pizza587.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,8 +80,6 @@
 		3FB1B3851726022800CDA888 = {
 			isa = PBXGroup;
 			children = (
-				3FB32A6D1738933F008A96E4 /* pizza587.png */,
-				3FB32A6B1738933B008A96E4 /* pizza114.png */,
 				3FB1B39A1726022800CDA888 /* PIzzaMan */,
 				3FB1B3931726022800CDA888 /* Frameworks */,
 				3FB1B3911726022800CDA888 /* Products */,
@@ -134,6 +132,8 @@
 		3FB1B39B1726022800CDA888 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				3FB32A6D1738933F008A96E4 /* pizza587.png */,
+				3FB32A6B1738933B008A96E4 /* pizza114.png */,
 				3FB1B39C1726022800CDA888 /* PIzzaMan-Info.plist */,
 				3FB1B39D1726022800CDA888 /* InfoPlist.strings */,
 				3FB1B3A01726022800CDA888 /* main.m */,
