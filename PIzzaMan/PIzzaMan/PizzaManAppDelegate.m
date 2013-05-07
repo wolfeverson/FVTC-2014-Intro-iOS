@@ -18,7 +18,7 @@
     LoginViewcontroller *login = [[LoginViewcontroller alloc] init];
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:login];
     [[self window] setRootViewController:nav];
-    self.window.backgroundColor = [UIColor whiteColor];
+    self.window.backgroundColor = [UIColor whiteColor]; 
     [self.window makeKeyAndVisible];
     return YES;
 }

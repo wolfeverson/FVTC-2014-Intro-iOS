@@ -26,6 +26,8 @@
 		3FB1B3C517260F8300CDA888 /* OptionsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FB1B3C317260F8300CDA888 /* OptionsViewController.xib */; };
 		3FB32A6917387759008A96E4 /* UpdateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FB32A6717387759008A96E4 /* UpdateViewController.m */; };
 		3FB32A6A17387759008A96E4 /* UpdateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FB32A6817387759008A96E4 /* UpdateViewController.xib */; };
+		3FB32A6C1738933B008A96E4 /* pizza114.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FB32A6B1738933B008A96E4 /* pizza114.png */; };
+		3FB32A6E1738933F008A96E4 /* pizza587.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FB32A6D1738933F008A96E4 /* pizza587.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +59,8 @@
 		3FB32A6617387759008A96E4 /* UpdateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpdateViewController.h; sourceTree = "<group>"; };
 		3FB32A6717387759008A96E4 /* UpdateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpdateViewController.m; sourceTree = "<group>"; };
 		3FB32A6817387759008A96E4 /* UpdateViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UpdateViewController.xib; sourceTree = "<group>"; };
+		3FB32A6B1738933B008A96E4 /* pizza114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pizza114.png; sourceTree = "<group>"; };
+		3FB32A6D1738933F008A96E4 /* pizza587.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pizza587.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +80,8 @@
 		3FB1B3851726022800CDA888 = {
 			isa = PBXGroup;
 			children = (
+				3FB32A6D1738933F008A96E4 /* pizza587.png */,
+				3FB32A6B1738933B008A96E4 /* pizza114.png */,
 				3FB1B39A1726022800CDA888 /* PIzzaMan */,
 				3FB1B3931726022800CDA888 /* Frameworks */,
 				3FB1B3911726022800CDA888 /* Products */,
@@ -208,6 +214,8 @@
 				3FB1B3C0172608D100CDA888 /* CreateAccountViewController.xib in Resources */,
 				3FB1B3C517260F8300CDA888 /* OptionsViewController.xib in Resources */,
 				3FB32A6A17387759008A96E4 /* UpdateViewController.xib in Resources */,
+				3FB32A6C1738933B008A96E4 /* pizza114.png in Resources */,
+				3FB32A6E1738933F008A96E4 /* pizza587.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
