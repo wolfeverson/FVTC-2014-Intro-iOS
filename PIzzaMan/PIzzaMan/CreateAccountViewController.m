@@ -200,6 +200,8 @@
             obj.City = _City;
             obj.State = _State;
             obj.Zip = _Zip;
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Account Created" message: _UserID delegate:self cancelButtonTitle:@"ok" otherButtonTitles: nil];
+            [alert show];
             OptionsViewController *o = [[OptionsViewController alloc] init];
             [self.navigationController pushViewController:o animated:YES];
             
