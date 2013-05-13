@@ -90,6 +90,17 @@
     {
         NSString *message = [json objectForKey:@"message"];
         NSLog(@"%@", message);
+        if ([[json objectForKey:@"message"] isEqualToString:@"Login Data Invalid"])
+        {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Login Failed" message:@"Please Check your login data and try again." delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+            [alert show];
+        }
+        else
+        {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Login Failed" message:@"Server Error.  Please try again in a moment." delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+            [alert show];
+        }
+
     }
 }
 

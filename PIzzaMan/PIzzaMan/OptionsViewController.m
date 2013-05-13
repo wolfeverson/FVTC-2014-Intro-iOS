@@ -85,6 +85,8 @@
     {
         NSString *message = [json objectForKey:@"message"];
         NSLog(@"%@", message);
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Delete Failed" message:@"Server Error. Please contact Support" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+        [alert show];
     }
 }
 

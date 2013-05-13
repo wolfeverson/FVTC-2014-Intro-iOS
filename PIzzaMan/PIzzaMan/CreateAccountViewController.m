@@ -58,6 +58,7 @@
     BOOL isValid = true;
     BOOL isPassworderror = false;
     BOOL isRegex = true;
+    BOOL isFormat = true;
     NSString *first = [FirstNameField text];
     NSString *last = [LastNameField text];
     NSString *Phone = [PhoneField text];
@@ -104,13 +105,13 @@
     {
         isValid = false;
     }
-    else if ([State isEqualToString: @""])
+    else if (State.length != 2)
     {
-        isValid = false;
+        isFormat = false;
     }
-    else if ([Zip isEqualToString: @""])
+    else if (Zip.length != 5)
     {
-        isValid = false;
+        isFormat = false;
     }
     else if ([Password isEqualToString: @""])
     {
@@ -141,10 +142,19 @@
                                              otherButtonTitles:@"OK",nil];
         [alert show];
     }
+    else if (!isFormat)//State is not checking for legit values.  Only legit lengths.  
+    {
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle: @"Create Failed"
+                                                       message: @"Ensure all fields are Valid.  Zip must be 5 digits and State 2 letter abbreviation."
+                                                      delegate: self
+                                             cancelButtonTitle:@"Cancel"
+                                             otherButtonTitles:@"OK",nil];
+        [alert show];
+    }
     else if (!isRegex)
     {
         UIAlertView *alert = [[UIAlertView alloc]initWithTitle: @"Create Failed"
-                                                       message: @"Ensure all fields are Valid"
+                                                       message: @"Ensure all fields are Valid.  Phone must be '(999)999-9999', email in an 'email@email.com' format."
                                                       delegate: self
                                              cancelButtonTitle:@"Cancel"
                                              otherButtonTitles:@"OK",nil];
@@ -198,6 +208,8 @@
         {
             NSString *message = [json objectForKey:@"message"]; 
             NSLog(@"%@", message);
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Create Failed" message:@"Server Error" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+            [alert show];
         }
     }
     
