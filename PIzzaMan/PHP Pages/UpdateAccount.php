@@ -63,9 +63,9 @@ else
 //sql(PDO)
 try
 {
-		$dsn = 'mysql:host=itsql.fvtc.edu;dbname=60314_200102410';
-		$username = '60314_200102410';
-		$password = '60314_200102410';	
+		$dsn = 'mysql:host=xxx;dbname=xxx';
+		$username = 'xxx';
+		$password = 'xxx';	
 		$options = array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION);		
 		$db = new PDO ($dsn,$username,$password,$options);
 		$update = "UPDATE CustomerInfo SET FirstName = :FirstName, LastName = :LastName, Address = :Address, City = :City, 
