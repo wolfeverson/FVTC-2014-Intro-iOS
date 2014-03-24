@@ -88,7 +88,7 @@ if($pw == $Password)
      			}';
     echo $response;	
 }
-else
+else  
 {
   $response = '{ "status":"error", "message":"Login Data Invalid", "timestamp":"'. $FloorSeconds . '"   }';
     echo $response;	
